@@ -1,4 +1,3 @@
-import Player from './Player'
 import UserPlayer from './UserPlayer'
 import InputController from './InputController'
 import PlayerManager from './PlayerManager'
@@ -7,7 +6,6 @@ class GameEngine {
 
   maxFps = 60
   maxSleepPerCycle = 1000 / this.maxFps
-  currentFrame = 0
 
   constructor() {
     this.userPlayer = new UserPlayer()
@@ -24,7 +22,6 @@ class GameEngine {
   async start() {
     while(true) {
       const s = new Date().getTime()
-      this.currentFrame++
       this.draw()
       const e = new Date().getTime()
       const sleepTime = Math.max(0, this.maxSleepPerCycle - (e - s))

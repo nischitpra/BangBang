@@ -1,6 +1,5 @@
 import React from 'react'
 import GameEngine from './GameEngine'
-import InputController from './InputController'
 
 class Main extends React.Component {
 

@@ -5,8 +5,8 @@ class BulletManager {
     this.bullets = []
   }
 
-  createBullet(position, target, bulletColor) {
-    this.bullets.push(new Bullet(position, target, bulletColor)) 
+  createBullet(playerId, position, target, bulletColor) {
+    this.bullets.push(new Bullet(playerId, position, target, bulletColor)) 
   }
 
   updateAndDrawBullet() {
@@ -22,7 +22,7 @@ class BulletManager {
   }
 
   shouldDelete(bullet) {
-    return bullet.position.x<0 || bullet.position.y<0 || bullet.position.x > window.canvas.width || bullet.position.y > window.canvas.height
+    return bullet.position.x<0 || bullet.position.y<0 || bullet.position.x > window.canvas.width || bullet.position.y > window.canvas.height || bullet.shouldDelete()
   }
 
   draw() {
