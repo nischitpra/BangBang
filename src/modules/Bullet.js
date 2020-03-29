@@ -53,7 +53,7 @@ class Bullet {
   hasCollision() {
     const players = window.gameEngine.playerManager.players
     for(let i=0;i<players.length;i++) {
-      if(players[i].id!=this.playerId&&Utils.distance(this.position,players[i].position) < 20) return true
+      if(players[i].id!=this.playerId&&Utils.distance(this.position,players[i].position) < 50) return true
     }
     return false
   }
